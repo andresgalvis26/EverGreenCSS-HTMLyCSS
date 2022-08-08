@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;700&display=swap');
+
+:root {
+    --color-primary: #2DE367;
+    --color-title: #000;
+    --align-title: left;
+    --padding-container: 100px 0;
+    --width-container: 90%;
+    --max-width-container: 1200px;
+    --color-btn: #2DE367;
+    --text-btn: #fff;
+    --padding-btn: 20px 35px;
+    --height-shape: 18em;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #eafaf1;
+    opacity: 1;
+    background-image: radial-gradient(#F0BD24 0.9500000000000001px, #eafaf1 0.9500000000000001px);
+    background-size: 19px 19px;
+}
+
+.container {
+    width: var(--width-container);
+    max-width: var(--max-width-container);
+    padding: var(--padding-container);
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.hero {
+    height: 100vh;
+    min-height: 500px;
+    position: relative;
+    --padding-container: 0;
+}
+
+/* Como hero tiene position absolute */
+/* El elemento after se posicionará de inmediato en él */
+.hero::after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: var(--height-shape);
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: -1;
+    /* clip-path: polygon(50% 0%, 100% 0, 100% 35%, 100% 100%, 75% 30%, 50% 100%, 25% 30%, 0 100%, 0% 35%, 0 0); */
+    /* clip-path: polygon(100% 25%, 100% 100%, 75% 50%, 50% 100%, 25% 50%, 0 100%, 0 25%); */
+    clip-path: polygon(50% 30%, 75% 0, 100% 25%, 100% 90%, 75% 70%, 50% 100%, 25% 70%, 0 90%, 0 12%, 25% 0);
+}
+
+.hero_container {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 3fr 2fr;
+    place-items: center;
+    gap: 30px;
+}
+
+.hero_texts {
+    text-align: center;
+}
+
+.hero_title {
+    font-size: 4rem;
+}
+
+.hero_copy {
+    font-size: 1.5rem;
+    margin: 25px 0;
+}
+
+.hero_cta {
+    display: inline-block;
+    background: var(--color-btn);
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 300;
+    text-decoration: none;
+    padding: var(--padding-btn);
+    text-align: center;
+    border-radius: 5px;
+}
+
+.hero_img {
+    width: 95%;
+}
+
+
+/* Main */
+.main {
+    background: #fff;
+}
+
+.title {
+    font-size: 2.5rem;
+    text-align: var(--align-title);
+    color: var(--color-title)
+}
+
+.title--border::after {
+    content: '';
+    display: block;
+    width: 100px;
+    margin-top: 20px;
+    height: 4px;
+    background: var(--color-primary);
+}
+
+.cta {
+    display: inline-block;
+    background: var(--color-btn);
+    color: var(--text-btn);
+    padding: var(--padding-btn);
+    text-align: center;
+    font-size: 1.3rem;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+
+/* Gerente */
+.gerente {
+    text-align: center;
+    border-bottom: 2px solid #ccc;
+    --padding-container: 20px 0 60px;
+}
+
+.gerente_container {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.gerente_name {
+    font-size: 2.5rem;
+    margin: 20px 0;
+}
+
+.gerente_tag {
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.gerente_paragraph {
+    text-align: left;
+    line-height: 1.5;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #615a5a;
+}
+
+/* .gerente_img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    object-position: top;
+} */
+
+
+/* About */
+.about {
+    display: grid;
+    grid-template-columns: 5fr 4fr;
+    place-items: center;
+}
+
+.about_course {
+    width: 95%;
+    text-align: center;
+}
+
+.about_paragraph {
+    margin: 20px 0;
+    line-height: 1.5;
+    font-weight: 300;
+    font-size: 1.1rem;
+    text-align: left;
+}
+
+.about_picture {
+    text-align: center;
+}
+
+.about_img {
+    width: 95%;
+}
+
+
+/* Card */
+.card {
+    background: #f2f2f2;
+}
+
+.card_copy {
+    margin-top: 25px;
+}
+
+.card_container {
+    width: 99%;
+    margin: 0 auto;
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 30px;
+    grid-template-areas: 
+    "   .  card1   . "
+    "card2 card1 card3"
+    "card2 card4 card3"
+    "  .   card4    . "
+    ;
+}
+
+.card_item {
+    padding: 20px;
+    background: #fff;
+    border-top: 5px solid var(--color-primary);
+    box-shadow: 0 0 3px rgba(0, 0, 0, .5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card_img {
+    background: var(--color-primary);
+    margin-top: 20px;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card_title {
+    margin: 30px 0;
+    font-size: 1.5rem;
+}
+
+.card_paragraph {
+    font-weight: 300;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.card_item:nth-last-of-type(1){
+    grid-area: card1;
+}
+
+.card_item:nth-last-of-type(2){
+    grid-area: card2;
+}
+
+.card_item:nth-last-of-type(3){
+    grid-area: card3;
+}
+
+.card_item:nth-last-of-type(4){
+    grid-area: card4;
+}
+
+
+/* Course */
+.course {
+    --color-title: #fff;
+    --color-btn: #fff;
+    --text-btn: #000;
+    color: var(--color-title);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.course_about {
+    z-index: 100;
+    align-self: center;
+    width: 97%;
+    margin: 0 auto;
+    padding: 30px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+    background-color: var(--color-primary);
+    grid-column: 1/4;
+    grid-row: 2/-2;
+}
+
+.course_picture {
+    margin: 0;
+    grid-column: 3/6;
+    grid-row: 1/6;
+    object-position: right;
+}
+
+.course_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.course_picture--right {
+    grid-column: 1/4;
+}
+
+.course_about--left {
+    grid-column: 3/6;
+}
+
+
+/* Footer */
+.footer {
+    position: relative;
+    --padding-container: 160px 0 50px;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background: #fff;
+    top: 0;
+    left: 0;
+    /* clip-path: polygon(0 0, 100% 0, 50% 100%); */
+    clip-path: polygon(59% 0, 75% 0, 100% 0, 100% 90%, 75% 50%, 50% 100%, 25% 50%, 0 90%, 0 0, 25% 0);
+}
+
+.footer_contact {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    place-items: center;
+    margin-bottom: 30px;
+}
+
+.footer_texts {
+    text-align: left;
+    justify-self: left;
+}
+
+.footer_copy {
+    font-weight: 300;
+    font-size: 1.2rem;
+    margin: 30px 0;
+}
+
+.footer_picture {
+    margin: 0;
+}
+
+.footer_img {
+    width: 100%;
+}
+
+.footer_social {
+    display: flex;
+    padding-top: 30px;
+    flex-wrap: wrap;
+}
+
+.footer_link {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer_icon {
+    width: 30px;
+}
+
+.footer_copyright {
+    padding-top: 30px;
+    border-top: 2px solid #918484;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 300;
+}
